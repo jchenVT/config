@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# /etc/X11/xinit/xinitrc
+#
+# global xinitrc file, used by all X sessions started by xinit (startx)
+
+# invoke global X session script
+. /etc/X11/Xsession
+
+xrandr --output eDP1 --dpi 250 
+feh --bg-scale ~/Pictures/tiger-grass.jpg
+exec --no-startup-id xset dpms 600
+exec --no-startup-id xautolock -time 5 -locker i3lock --detectsleep
+exec i3

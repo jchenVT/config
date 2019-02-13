@@ -197,7 +197,7 @@ bar {
 #overgrive applet
 exec --no-startup-id python /opt/thefanclub/overgrive/overgrive 
 #pia vpn applet
-exec --no-startup-id ~/pia.sh
+exec --no-startup-id ~/bin/pia.sh
 #network manager (wifi) aplet
 exec --no-startup-id nm-applet
 #keyring (chrome passwords) applet

@@ -119,9 +119,6 @@ alias updatenvm='nvm install 8 --reinstall-packages-from=8 --latest-npm'
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-#
-#this alias is the config git helper
-alias config='/usr/bin/git --git-dir=$HOME/config-files/ --work-tree=$HOME'
 
 #thefuck alias
 eval $(thefuck --alias)
@@ -157,7 +154,7 @@ alias buildit="cmake ../ && make"
 alias sleep='~/bin/sleep.sh'
 
 #alias for searching file contents
-alias fcfzf='grep --line-buffered --color=never -r "" * | fzf'
+alias fzfinfile='grep --line-buffered --color=never -r "" * | fzf'
 
 #alias to use vimclip
 alias vimclip='bash /home/joseph/bin/vimclip'
@@ -165,8 +162,8 @@ alias vimclip='bash /home/joseph/bin/vimclip'
 #alias to use get curl weather
 alias weather='curl wttr.in'
 #this grabs aliases fro m.bashrc_aliases, wont be pushed to git repo ie local aliases
-if [ -f $HOME/.bash_aliases ]; then
-    . $HOME/.bash_aliases
+if [ -f $HOME/.zsh_aliases ]; then
+    . $HOME/.zsh_aliases
 fi
 [ -z "$ZSH_NAME" ] && [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 

@@ -1,0 +1,14 @@
+#set the colors right
+setw -g xterm-keys on
+set -g default-terminal "screen-256color"
+#change tmux activater to ctrl-a
+unbind C-b 
+set-option -g prefix C-a
+bind-key C-a send-prefix
+#incresae the display buffer
+set -g history-limit 5000
+#move between panes with vim like bindings
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R

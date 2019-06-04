@@ -8,10 +8,16 @@ bind-key C-a send-prefix
 #incresae the display buffer
 set -g history-limit 1000
 #move between panes with vim like bindings
-bind h select-pane -L
-bind j select-pane -D
-bind k select-pane -U
-bind l select-pane -R
+bind -r h select-pane -L
+bind -r j select-pane -D
+bind -r k select-pane -U
+bind -r l select-pane -R
+# vim-like pane resizing  
+bind -r C-k resize-pane -U
+bind -r C-j resize-pane -D
+bind -r C-h resize-pane -L
+bind -r C-l resize-pane -R
+
 #vim bindings for copy mode
 bind-key v copy-mode
 set-window-option -g mode-keys vi

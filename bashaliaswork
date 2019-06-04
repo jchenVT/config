@@ -1,0 +1,7 @@
+export TERM=xterm-256color
+export EDITOR=vim
+
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias weather='curl wttr.in'

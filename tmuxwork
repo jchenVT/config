@@ -6,9 +6,14 @@ unbind C-b
 set-option -g prefix C-a
 bind-key C-a send-prefix
 #incresae the display buffer
-set -g history-limit 5000
+set -g history-limit 1000
 #move between panes with vim like bindings
 bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
+#vim bindings for copy mode
+bind-key v copy-mode
+set-window-option -g mode-keys vi
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel

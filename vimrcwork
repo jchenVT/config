@@ -24,20 +24,8 @@ Plug 'davidhalter/jedi-vim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 "===========================================================
-"youcompleteme stuff here 
-"but only uses when ycm cant find extra conf in current directroy
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_server_python_interpreter = '/usr/bin/python'
-let g:ycm_complete_in_comments=1
-let g:ycm_key_list_select_completion=['<TAB>']
-let g:ycm_autoclose_preview_window_after_insertion=1
-"=========================================================
 "vim sandwich config
 let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
-"===============================================================================
-"this makes tpp to be same as cpp for syntax and ycm
-autocmd BufEnter *.tpp :setlocal filetype=cpp
 "===============================================================================
 "vim only stuff here
 set autoindent
@@ -49,7 +37,6 @@ set number "show line numbers
 set showcmd "show command in bottomr bar
 set cursorline "highlight current line
 set wildmenu "visual autocompelete for command
-set lazyredraw "redraw screen less often
 set showmatch "highlight something lol
 set incsearch "search as characters are etnered
 set hlsearch "highlights matches
@@ -68,11 +55,10 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
 "Colorscheme ==================================================="
 set termguicolors
-colorscheme gruvbox "switching to this vs jellybeans
+colorscheme gruvbox 
 "checks whether desktop or laptop and sets dark or light accordingly
 set background=light
 let g:gruvbox_contrast_light = 'medium'
-let g:gruvbox_contrast_dark = 'medium'
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'
 "=================================================================
@@ -96,4 +82,3 @@ inoremap "" ""<Esc>i
 :command W w
 :command Q q
 :command Nt NERDTreeToggle
-:command Fix :YcmCompleter FixIt

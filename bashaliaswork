@@ -5,3 +5,5 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
 alias weather='curl wttr.in'
+
+PATH=$PATH:/home/a646273/.local/bin/

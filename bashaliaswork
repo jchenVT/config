@@ -1,6 +1,7 @@
 #color in tmux and vim
 export TERM=xterm-256color
 export EDITOR=vim
+shopt -s autocd
 
 #some actual alisases
 alias gs='git status'

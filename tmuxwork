@@ -3,6 +3,7 @@ setw -g xterm-keys on
 set -g default-terminal "screen-256color"
 #change tmux activater to ctrl-a
 unbind C-b 
+unbind C-h
 set-option -g prefix C-a
 bind-key C-a send-prefix
 #incresae the display buffer

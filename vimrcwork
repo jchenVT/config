@@ -30,7 +30,9 @@ let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
 "vim only stuff here
 set autoindent
 "python work setup
+set expandtab
 set tabstop=2 "number of VISUAL spaces
+set softtabstop=2 
 set shiftwidth=2
 autocmd FileType python setlocal shiftwidth=2 tabstop=2
 set number "show line numbers

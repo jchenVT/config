@@ -10,13 +10,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'machakann/vim-sandwich'
 "sleuth detects tabs or spaces and lenght and adjusts accordingly
 Plug 'tpope/vim-sleuth'
-"adds cool statusline
-Plug 'itchyny/lightline.vim'
-Plug 'shinchu/lightline-gruvbox.vim'
 "buffer line plugin
 Plug 'ap/vim-buftabline'
-"directory tree in vim"
-Plug 'scrooloose/nerdtree'
 "gruvbox colorscheme"
 Plug 'morhetz/gruvbox'
 "Python autocomplete boi
@@ -61,8 +56,6 @@ colorscheme gruvbox
 "checks whether desktop or laptop and sets dark or light accordingly
 set background=light
 let g:gruvbox_contrast_light = 'medium'
-let g:lightline = {}
-let g:lightline.colorscheme = 'gruvbox'
 "=================================================================
 "This makes vim split stuff easier
 "This allows movement between vi split with CTRL+HJKL
@@ -78,9 +71,7 @@ inoremap [[ []<Esc>i
 inoremap (( ()<Esc>i
 inoremap '' ''<Esc>i
 inoremap "" ""<Esc>i
-"nerdtreeeasier==================================================
 :command WQ wq
 :command Wq wq
 :command W w
 :command Q q
-:command Nt NERDTreeToggle

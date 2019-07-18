@@ -18,6 +18,8 @@ flaskrun() {
 
 PATH=$PATH:/home/a646273/.local/bin/
 
+eval "$(thefuck --alias)"
+
 #bash history across multiple shells
 export HISTCONTROL=ignoredups:erasedups
 shopt -s histappend

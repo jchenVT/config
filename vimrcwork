@@ -16,6 +16,8 @@ Plug 'ap/vim-buftabline'
 Plug 'morhetz/gruvbox'
 "Python autocomplete boi
 Plug 'davidhalter/jedi-vim'
+"Python linter: requires flake8; pip install --user flake8
+Plug 'nvie/vim-flake8'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 "===========================================================
@@ -25,11 +27,10 @@ let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
 "vim only stuff here
 set autoindent
 "python work setup
+filetype plugin indent on
+set tabstop=4 "number of VISUAL spaces is 4
+set shiftwidth=4 "indenting with > is 4 spaces
 set expandtab
-set tabstop=2 "number of VISUAL spaces
-set softtabstop=2 
-set shiftwidth=2
-autocmd FileType python setlocal shiftwidth=2 tabstop=2
 set number "show line numbers
 set showcmd "show command in bottomr bar
 set cursorline "highlight current line
@@ -56,6 +57,8 @@ colorscheme gruvbox
 "checks whether desktop or laptop and sets dark or light accordingly
 set background=light
 let g:gruvbox_contrast_light = 'medium'
+"flake8===================================================
+:command Flake8 :call flake8#Flake8()
 "=================================================================
 "This makes vim split stuff easier
 "This allows movement between vi split with CTRL+HJKL

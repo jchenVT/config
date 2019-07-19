@@ -1,0 +1,80 @@
+" Plugins will be downloaded under the specified directory.
+call plug#begin('~/.vim/plugged') " Declare the list of plugins.  adds some basic vim functionality in case stuff breaks
+"good default vim options
+Plug 'tpope/vim-sensible'
+" adds git functionality to vim, run all git commands
+Plug 'tpope/vim-fugitive'
+" semantic autocompletion engine
+Plug 'airblade/vim-gitgutter'
+"sandwich allows for adding/deleting/replacing (), [], {}, and more to surround text
+Plug 'machakann/vim-sandwich'
+"sleuth detects tabs or spaces and lenght and adjusts accordingly
+Plug 'tpope/vim-sleuth'
+"buffer line plugin
+Plug 'ap/vim-buftabline'
+"gruvbox colorscheme"
+Plug 'morhetz/gruvbox'
+"Python autocomplete boi
+Plug 'davidhalter/jedi-vim'
+"Python linter: requires flake8; pip install --user flake8
+Plug 'nvie/vim-flake8'
+" List ends here. Plugins become visible to Vim after this call.
+call plug#end()
+"===========================================================
+"vim sandwich config
+let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
+"===============================================================================
+"vim only stuff here
+set autoindent
+"python work setup
+filetype plugin indent on
+set tabstop=4 "number of VISUAL spaces is 4
+set shiftwidth=4 "indenting with > is 4 spaces
+set expandtab
+set number "show line numbers
+set showcmd "show command in bottomr bar
+set cursorline "highlight current line
+set wildmenu "visual autocompelete for command
+set showmatch "highlight something lol
+set incsearch "search as characters are etnered
+set hlsearch "highlights matches
+"so backspace is weird and this fixes taht? idk
+" jk is wavy
+inoremap jk <esc>
+inoremap JK <esc>
+inoremap kj <esc>
+inoremap <caps> <esc>
+set nowrap
+syntax enable  " enable syntax processing
+"backup stuff heres======================================================
+set backup 
+set writebackup
+set backupdir=~/.vim/backup
+set directory=~/.vim/tmp
+"Colorscheme ==================================================="
+set termguicolors
+colorscheme gruvbox 
+"checks whether desktop or laptop and sets dark or light accordingly
+set background=light
+let g:gruvbox_contrast_light = 'medium'
+"flake8===================================================
+:command Flake8 :call flake8#Flake8()
+"=================================================================
+"This makes vim split stuff easier
+"This allows movement between vi split with CTRL+HJKL
+nnoremap <C-H> <C-W><C-H>
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+"==============================================================
+"This auto expands opening brackets/parentheses
+"this annoying inoremap ( ()<Esc>i
+inoremap {{ {}<Esc>i<return><esc>O
+inoremap [[ []<Esc>i
+inoremap (( ()<Esc>i
+inoremap '' ''<Esc>i
+inoremap "" ""<Esc>i
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q

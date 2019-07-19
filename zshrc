@@ -71,7 +71,10 @@ source ~/.fonts/*.sh
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  hacker-quotes
+  zsh-completions
   zsh-syntax-highlighting
+
 )
 
 source $ZSH/oh-my-zsh.sh

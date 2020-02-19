@@ -13,9 +13,9 @@ Plug 'airblade/vim-gitgutter'
 " fuzzy file completion, for vim and terminal
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-"sandwich allows for adding/deleting/replacing (), [], {}, and more to surround text
+"sandwich allows for adding/deleting/replacing (), [], {}, and more to surround text Plug 'machakann/vim-sandwich' sleuth detects tabs or spaces and lenght and adjusts accordingly
 Plug 'machakann/vim-sandwich'
-"sleuth detects tabs or spaces and lenght and adjusts accordingly
+"Sleuth for tabs/spaces auto
 Plug 'tpope/vim-sleuth'
 "adds cool statusline
 Plug 'itchyny/lightline.vim'
@@ -31,9 +31,10 @@ call plug#end()
 "===========================================================
 "youcompleteme stuff here 
 "but only uses when ycm cant find extra conf in current directroy
+set encoding=utf-8
 let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
 let g:ycm_confirm_extra_conf = 0
-let g:ycm_server_python_interpreter = '/usr/bin/python'
+let g:ycm_server_python_interpreter = '/usr/bin/python3'
 let g:ycm_complete_in_comments=1
 let g:ycm_key_list_select_completion=['<TAB>']
 let g:ycm_autoclose_preview_window_after_insertion=1
@@ -71,15 +72,11 @@ set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
 "Colorscheme ==================================================="
 set termguicolors
+set t_Co=256
 colorscheme gruvbox "switching to this vs jellybeans
 "checks whether desktop or laptop and sets dark or light accordingly
-if system('hostname')[:-2]  == 'mylongestyeahboiever'
-	set background=dark
-else 
-	set background=light
-endif
+set background=light
 let g:gruvbox_contrast_light = 'medium'
-let g:gruvbox_contrast_dark = 'medium'
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'
 "=================================================================

@@ -2,22 +2,28 @@ import os
 import ycm_core
 
 TiLib = [
-        "/home/joseph/ti/simplelink_cc32xx_sdk_3_30_01_02/"
+  "/home/joseph/ti/simplelink_cc32xx_sdk_3_30_01_02/"
 ]
 
+freeRtosLib = [
+  "/home/joseph/FreeRTOS/FreeRTOSv10.2.1_191129/FreeRTOS/Source"
+]
 
-libDirs = TiLib + ["lib"]
+libDirs = TiLib + freeRtosLib + ["lib"] + ["./Debug/"]
 
 flags = [
-    '-Wall'
+     '-Wall'
     ,'-Wextra'
     ,'-Werror'
     ,'-Wno-attributes'
+    ,'std=c99'
     ,'c'
-    ,'I/home/joseph/ti/simplelink_cc32xx_sdk_3_30_01_02/source/ti/drivers',
-    ,'I/home/joseph/ti/simplelink_cc32xx_sdk_3_30_01_02/source/ti/boards',
-    ,'I/home/joseph/ti/simplelink_cc32xx_sdk_3_30_01_02/source/ti/utils',
-    ,'I/home/joseph/ti/simplelink_cc32xx_sdk_3_30_01_02/kernel',
+    ,'-I/home/joseph/ti/simplelink_cc32xx_sdk_3_30_01_02/source/ti/drivers'
+    ,'-I/home/joseph/ti/simplelink_cc32xx_sdk_3_30_01_02/source/ti/boards'
+    ,'-I/home/joseph/ti/simplelink_cc32xx_sdk_3_30_01_02/source/ti/utils'
+    ,'-I/home/joseph/ti/simplelink_cc32xx_sdk_3_30_01_02/kernel'
+    ,'-I/home/joseph/FreeRTOS/FreeRTOSv10.2.1_191129/FreeRTOS/Source/include'
+    ,'-I./Debug/syscfg'
 
 ]
 

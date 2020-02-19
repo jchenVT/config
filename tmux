@@ -1,6 +1,12 @@
 #set the colors right
 setw -g xterm-keys on
 set -g default-terminal "screen-256color"
+
+#switch to ctrl-a for key
+unbind C-b
+set-option -g prefix C-a
+bind-key C-a send-prefix
+
 #incresae the display buffer
 set -g history-limit 1000
 #move between panes with vim like bindings

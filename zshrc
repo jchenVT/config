@@ -1,5 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+ export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH
+ source $HOME/.cargo/env
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -13,40 +14,21 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
-POWERLEVEL9K_MODE='awesome-fontconfig'
-
-#FONTS STUFF
-source ~/.fonts/*.sh
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+#POWERLEVEL9K_COLOR_SCHEME='light'
+POWERLEVEL9K_MODE='nerdfont-complete'
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 # HYPHEN_INSENSITIVE="true"
 
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
 # Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
+export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="false"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -69,13 +51,7 @@ source ~/.fonts/*.sh
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  hacker-quotes
-  zsh-completions
-  zsh-syntax-highlighting
-
-)
+plugins=( git tmux zsh-completions zsh-syntax-highlighting )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,34 +81,17 @@ export XDG_DATA_HOME=${XDG_DATA_HOME:="$HOME/.local/share"}
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-#ssetup for nvm/nodejs stuff
-export NVM_DIR="$HOME/.nvm"
-# This loads nvm
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  
-# This loads nvm bash_completion
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  
-#this alias is to update npm MAYBE OUTDATED AT SOME POINT
-alias updatenvm='nvm install 8 --reinstall-packages-from=8 --latest-npm'
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
 #thefuck alias
 eval $(thefuck --alias)
 
 #cd aliases
-#alias ..='cd ..'
-#alias ...='cd ../../'
 alias cddown='cd ~/Downloads'
 alias cddoc='cd ~/Documents'
-alias cdr='cd ~/repos'
-alias cdgd='cd ~/Google\ Drive/'
 
 alias ycmg='~/.vim/plugged/YCM-Generator/config_gen.py .'
 
@@ -150,20 +109,12 @@ alias l='ls -CF'
 alias am='alsamixer'
 alias rr='ranger'
 
-#build alias
-alias buildit="cmake ../ && make"
-
-#sleep alias that uses i3lock
-alias sleep='~/bin/sleep.sh'
-
 #alias for searching file contents
 alias fzfinfile='grep --line-buffered --color=never -r "" * | fzf'
 
-#alias to use vimclip
-alias vimclip='bash /home/joseph/bin/vimclip'
-
 #alias to use get curl weather
 alias weather='curl wttr.in'
+
 #this grabs aliases fro m.bashrc_aliases, wont be pushed to git repo ie local aliases
 if [ -f $HOME/.zsh_aliases ]; then
     . $HOME/.zsh_aliases

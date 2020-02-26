@@ -182,7 +182,6 @@ bar {
 	position top
         tray_padding -5 
         status_command /home/joseph/repos/bumblebee-status/bumblebee-status -m  battery brightness disk cpu amixer date time -t gruvbox-powerline-light
-        #i3blocks -c ~/.i3/blocks.conf 
         colors {
         #colors based on gruvbox light
                 background #f9f5d7

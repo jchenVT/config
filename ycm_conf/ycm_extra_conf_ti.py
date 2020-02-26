@@ -2,9 +2,9 @@ import os
 import ycm_core
 
 TiLib = [
-        "/home/joseph/ti"
-        ,"./"
+        "/home/joseph/ti/simplelink_cc32xx_sdk_3_30_01_02/"
 ]
+
 
 libDirs = TiLib + ["lib"]
 
@@ -14,6 +14,11 @@ flags = [
     ,'-Werror'
     ,'-Wno-attributes'
     ,'c'
+    ,'I/home/joseph/ti/simplelink_cc32xx_sdk_3_30_01_02/source/ti/drivers',
+    ,'I/home/joseph/ti/simplelink_cc32xx_sdk_3_30_01_02/source/ti/boards',
+    ,'I/home/joseph/ti/simplelink_cc32xx_sdk_3_30_01_02/source/ti/utils',
+    ,'I/home/joseph/ti/simplelink_cc32xx_sdk_3_30_01_02/kernel',
+
 ]
 
 compilation_database_folder = ''

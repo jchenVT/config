@@ -75,7 +75,7 @@ set termguicolors
 set t_Co=256
 colorscheme gruvbox "switching to this vs jellybeans
 "checks whether desktop or laptop and sets dark or light accordingly
-set background=light
+set background=dark
 let g:gruvbox_contrast_light = 'medium'
 let g:lightline = {}
 let g:lightline.colorscheme = 'gruvbox'

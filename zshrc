@@ -1,9 +1,12 @@
 # If you come from bash you might have to change your $PATH.
- export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH
+ export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:$HOME/.cargo/bin:$PATH
  source $HOME/.cargo/env
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+
+#FONTS STUFF
+ source ~/.fonts/*.sh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -14,8 +17,17 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
-#POWERLEVEL9K_COLOR_SCHEME='light'
 POWERLEVEL9K_MODE='nerdfont-complete'
+
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
+# Uncomment the following line to use case-sensitive completion.
+# CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -90,16 +102,15 @@ export EDITOR="$VISUAL"
 eval $(thefuck --alias)
 
 #cd aliases
-alias cddown='cd ~/Downloads'
+alias cddwn='cd ~/Downloads'
 alias cddoc='cd ~/Documents'
+alias cdr='cd ~/repos'
 
 alias ycmg='~/.vim/plugged/YCM-Generator/config_gen.py .'
 
 alias gs='git status'
 alias ga='git add'
 alias gc='git commit'
-
-alias update='sudo apt update && sudo apt upgrade && sudo snap refresh'
 
 # some more ls aliases
 alias ll='ls -alF'
@@ -108,6 +119,9 @@ alias l='ls -CF'
 
 alias am='alsamixer'
 alias rr='ranger'
+
+#sleep alias that uses i3lock
+alias sleep='systemctl suspend'
 
 #alias for searching file contents
 alias fzfinfile='grep --line-buffered --color=never -r "" * | fzf'
@@ -122,3 +136,20 @@ fi
 [ -z "$ZSH_NAME" ] && [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Lines configured by zsh-newuser-install
+setopt autocd extendedglob
+unsetopt beep
+bindkey -v
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/joseph/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+#
+#
+
+# POWERLINE FONT 
+powerline-daemon -q
+. /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh

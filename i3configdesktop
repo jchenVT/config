@@ -37,8 +37,11 @@ font pango:monospace 12
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+#window doesnt switch on mouse
+focus_follows_mouse no
+
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec /usr/local/bin/roxterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -151,12 +154,8 @@ bindsym Print exec "/home/joseph/bin/catvideo.sh"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
+        # These bindings trigger as soon as you enter the resize mode
         bindsym h resize shrink width 10 px or 10 ppt
         bindsym j resize grow height 10 px or 10 ppt
         bindsym k resize shrink height 10 px or 10 ppt
@@ -175,20 +174,18 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-
-exec killall q dunst
-exec compton
 exec --no-startup-id alsactl restore
 exec --no-startup-id /opt/pia/run.sh --startup
 exec --no-startup-id python /opt/thefanclub/overgrive/overgrive
-exec --no-startup-id ~/bin/arandroutput.sh
-exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
-exec --no-startup-id notify-osd
+exec --no-startup-id /home/joseph/.screenlayout/defaultscreen.sh
+exec --no-startup-id feh --no-xinerama --bg-scale ~/Pictures/bulb_wallpaper.jpg
+exec compton
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+        font pango:monospace 13
         colors {
                 background         #3c3836
                 active_workspace   #3c3836 #ebdbb2 #32302f
@@ -198,5 +195,5 @@ bar {
 	position top
         tray_output primary
         status_command ~/repos/bumblebee-status/bumblebee-status\
-                -m xrandr gpmdp nvidiagpu date time -t gruvbox-powerline
+                -m xrandr date time -t gruvbox-powerline
 }

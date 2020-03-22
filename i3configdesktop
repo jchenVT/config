@@ -175,11 +175,12 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 exec --no-startup-id alsactl restore
+exec --no-startup-id nm-applet 
 exec --no-startup-id /opt/pia/run.sh --startup
 exec --no-startup-id python /opt/thefanclub/overgrive/overgrive
 exec --no-startup-id /home/joseph/.screenlayout/defaultscreen.sh
-exec --no-startup-id feh --no-xinerama --bg-scale ~/Pictures/bulb_wallpaper.jpg
 exec compton
+exec --no-startup-id feh --no-xinerama --bg-scale ~/Pictures/bulb_wallpaper.jpg
 
 
 # Start i3bar to display a workspace bar (plus the system information i3status

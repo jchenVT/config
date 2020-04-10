@@ -6,14 +6,14 @@
 export ZSH=$HOME/.oh-my-zsh
 
 #FONTS STUFF
- source ~/.fonts/*.sh
+ #source ~/.fonts/*.sh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs virtualenv)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
@@ -133,9 +133,7 @@ alias weather='curl wttr.in'
 if [ -f $HOME/.zsh_aliases ]; then
     . $HOME/.zsh_aliases
 fi
-[ -z "$ZSH_NAME" ] && [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # Lines configured by zsh-newuser-install
 setopt autocd extendedglob
 unsetopt beep
@@ -150,6 +148,4 @@ compinit
 #
 #
 
-# POWERLINE FONT 
-powerline-daemon -q
-. /usr/lib/python3.8/site-packages/powerline/bindings/zsh/powerline.zsh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

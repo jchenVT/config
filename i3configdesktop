@@ -149,8 +149,8 @@ bindsym Pause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-#catvideos
-bindsym Print exec "/home/joseph/bin/catvideo.sh"
+# Take a screenshot
+bindsym Print exec --no-startup-id flameshot gui
 
 # resize window (you can also use the mouse for that)
 mode "resize" {

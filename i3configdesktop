@@ -174,12 +174,13 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+exec --no-startup-id xcalib ~/config/asusvg248qe.icm
+
 exec --no-startup-id alsactl restore
 exec --no-startup-id nm-applet 
 exec --no-startup-id /opt/pia/run.sh --startup
 exec --no-startup-id python /opt/thefanclub/overgrive/overgrive
 exec --no-startup-id /home/joseph/.screenlayout/defaultscreen.sh
-exec compton
 exec --no-startup-id feh --no-xinerama --bg-scale ~/Pictures/bulb_wallpaper.jpg
 
 
@@ -194,7 +195,7 @@ bar {
                 inactive_workspace #504945 #282828 #fbf1c7
         }
 	position top
-        tray_output primary
+        #tray_output
         status_command ~/repos/bumblebee-status/bumblebee-status\
                 -m xrandr date time -t gruvbox-powerline
 }

@@ -15,8 +15,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 "sandwich allows for adding/deleting/replacing (), [], {}, and more to surround text Plug 'machakann/vim-sandwich' sleuth detects tabs or spaces and lenght and adjusts accordingly
 Plug 'machakann/vim-sandwich'
+"This shit not working ...
 "Sleuth for tabs/spaces auto
-Plug 'tpope/vim-sleuth'
+"Plug 'tpope/vim-sleuth'
 "adds cool statusline
 Plug 'itchyny/lightline.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
@@ -46,9 +47,9 @@ let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
 autocmd BufEnter *.tpp :setlocal filetype=cpp
 "===============================================================================
 "vim only stuff here
-set autoindent
 set tabstop=4 "number of VISUAL spaces
 set shiftwidth=4
+set expandtab
 set number "show line numbers
 set showcmd "show command in bottomr bar
 set cursorline "highlight current line

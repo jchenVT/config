@@ -1,6 +1,5 @@
 rm ~/.vimrc
 rm ~/.tmux.conf
-ln -s /home/$(whoami)/config/bashaliaswork /home/$(whoami)/.bash_aliases
 ln -s /home/$(whoami)/config/vimrc /home/$(whoami)/.vimrc
 ln -s /home/$(whoami)/config/tmuxw /home/$(whoami)/.tmux.conf
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \

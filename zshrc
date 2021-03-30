@@ -29,7 +29,7 @@ export EDITOR="$VISUAL"
 
 ####################################################################
 # ALIASES
-
+alias vi=vim
 #thefuck alias
 eval $(thefuck --alias)
 #cd aliases

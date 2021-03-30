@@ -5,9 +5,7 @@ Plug 'tpope/vim-sensible'
 " adds git functionality to vim, run all git commands
 Plug 'tpope/vim-fugitive'
 " semantic autocompletion engine
-Plug 'Valloric/YouCompleteMe'
-" creates configuration files for YCM
-Plug 'rdnetto/YCM-Generator', {'branch': 'stable'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Adds git functionality: shows new, deleted, and changed lines
 Plug 'airblade/vim-gitgutter'
 " fuzzy file completion, for vim and terminal
@@ -15,9 +13,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 "sandwich allows for adding/deleting/replacing (), [], {}, and more to surround text Plug 'machakann/vim-sandwich' sleuth detects tabs or spaces and lenght and adjusts accordingly
 Plug 'machakann/vim-sandwich'
-"This shit not working ...
 "Sleuth for tabs/spaces auto
-"Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-sleuth'
 "adds cool statusline
 Plug 'itchyny/lightline.vim'
 Plug 'shinchu/lightline-gruvbox.vim'
@@ -30,21 +27,8 @@ Plug 'morhetz/gruvbox'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 "===========================================================
-"youcompleteme stuff here 
-"but only uses when ycm cant find extra conf in current directroy
-set encoding=utf-8
-let g:ycm_global_ycm_extra_conf = "~/.vim/.ycm_extra_conf.py"
-let g:ycm_confirm_extra_conf = 0
-let g:ycm_server_python_interpreter = '/usr/bin/python3'
-let g:ycm_complete_in_comments=1
-let g:ycm_key_list_select_completion=['<TAB>']
-let g:ycm_autoclose_preview_window_after_insertion=1
-"=========================================================
 "vim sandwich config
 let g:sandwich#recipes = deepcopy(g:sandwich#default_recipes)
-"===============================================================================
-"this makes tpp to be same as cpp for syntax and ycm
-autocmd BufEnter *.tpp :setlocal filetype=cpp
 "===============================================================================
 "vim only stuff here
 set tabstop=4 "number of VISUAL spaces
@@ -71,6 +55,7 @@ set backup
 set writebackup
 set backupdir=~/.vim/backup
 set directory=~/.vim/tmp
+set undodir=~/.vim/backup
 "Colorscheme ==================================================="
 set termguicolors
 set t_Co=256
@@ -90,7 +75,7 @@ nnoremap <C-L> <C-W><C-L>
 "==============================================================
 "This auto expands opening brackets/parentheses
 "this annoying inoremap ( ()<Esc>i
-inoremap {{ {}<Esc>i<return><esc>O
+inoremap {{ {}<Esc>i
 inoremap [[ []<Esc>i
 inoremap (( ()<Esc>i
 inoremap '' ''<Esc>i
@@ -101,4 +86,3 @@ inoremap "" ""<Esc>i
 :command W w
 :command Q q
 :command Nt NERDTreeToggle
-:command Fix :YcmCompleter FixIt

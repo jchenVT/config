@@ -1,6 +1,8 @@
+# set tmux use zsh
+set-option -g default-shell /bin/zsh
 #set the colors right
 setw -g xterm-keys on
-set -g default-terminal "screen-256color"
+set -g default-terminal "xterm-256color"
 
 #switch to ctrl-a for key
 unbind C-b

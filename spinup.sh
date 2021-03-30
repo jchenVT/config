@@ -6,4 +6,5 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 mkdir -p ~/.vim/backup
 mkdir -p ~/.vim/tmp
+mkdir -p ~/.vim/backup
 vim -c "PlugInstall"

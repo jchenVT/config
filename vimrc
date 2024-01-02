@@ -24,6 +24,8 @@ Plug 'ap/vim-buftabline'
 Plug 'scrooloose/nerdtree'
 "gruvbox colorscheme"
 Plug 'morhetz/gruvbox'
+"Search counter
+Plug 'google/vim-searchindex'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 "===========================================================
@@ -72,6 +74,8 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
+set splitbelow
+set splitright
 "==============================================================
 "This auto expands opening brackets/parentheses
 "this annoying inoremap ( ()<Esc>i
@@ -80,9 +84,14 @@ inoremap [[ []<Esc>i
 inoremap (( ()<Esc>i
 inoremap '' ''<Esc>i
 inoremap "" ""<Esc>i
-"nerdtreeeasier==================================================
+"Save time
 :command WQ wq
 :command Wq wq
 :command W w
 :command Q q
+"nerdtreeeasier==================================================
 :command Nt NERDTreeToggle
+map <C-n> :NERDTreeToggle<CR>
+"tab and shiftabe for coc autocomplete============================
+inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"

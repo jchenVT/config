@@ -61,12 +61,21 @@ set undodir=~/.vim/backup
 "Colorscheme ==================================================="
 set termguicolors
 set t_Co=256
-colorscheme gruvbox "switching to this vs jellybeans
-"checks whether desktop or laptop and sets dark or light accordingly
-set background=dark
-let g:gruvbox_contrast_light = 'medium'
-let g:lightline = {}
-let g:lightline.colorscheme = 'gruvbox'
+function! ChangeBackground()
+    colorscheme gruvbox
+    let g:lightline ={
+        \'colorscheme': 'gruvbox'
+    \}
+    if system("cat ~/mode.conf") =~ "NIGHT"
+        set background=dark
+    else
+        set background=light
+    endif
+endfunction
+call ChangeBackground()
+"let g:gruvbox_contrast_light = 'medium'
+"let g:lightline = {}
+"let g:lightline.colorscheme = 'gruvbox'
 "=================================================================
 "This makes vim split stuff easier
 "This allows movement between vi split with CTRL+HJKL
@@ -95,3 +104,5 @@ map <C-n> :NERDTreeToggle<CR>
 "tab and shiftabe for coc autocomplete============================
 inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
 inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
+
+command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument

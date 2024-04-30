@@ -22,6 +22,8 @@ plugins=(git tmux )
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+export PATH=$PATH:~/.cargo/bin/
+
 
 #setting the editor"
 export VISUAL=vim

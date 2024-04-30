@@ -31,4 +31,4 @@ bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel 'xclip -in -selection c
 
 
 # source tmux colors
-source-file ~/config/tmuxdark.conf
+source-file ~/config/tmuxlight.conf

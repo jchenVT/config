@@ -4,8 +4,6 @@ call plug#begin('~/.vim/plugged') " Declare the list of plugins.  adds some basi
 Plug 'tpope/vim-sensible'
 " adds git functionality to vim, run all git commands
 Plug 'tpope/vim-fugitive'
-" semantic autocompletion engine
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Adds git functionality: shows new, deleted, and changed lines
 Plug 'airblade/vim-gitgutter'
 " fuzzy file completion, for vim and terminal
@@ -26,6 +24,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'morhetz/gruvbox'
 "Search counter
 Plug 'google/vim-searchindex'
+" atuo configurations for language servers
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+" auto comppletion for ^
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 "===========================================================
@@ -101,8 +105,6 @@ inoremap "" ""<Esc>i
 "nerdtreeeasier==================================================
 :command Nt NERDTreeToggle
 map <C-n> :NERDTreeToggle<CR>
-"tab and shiftabe for coc autocomplete============================
-inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
-inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
-
-command! -nargs=0 Prettier :CocCommand prettier.forceFormatDocument
+"nerdtreeeasier==================================================
+map <C-f> :FZF<CR>
+map <C-g> :Rg<CR>
